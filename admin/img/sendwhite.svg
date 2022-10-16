@@ -1,0 +1,9 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40">
+	<title>Nuevo proyecto</title>
+	<defs>
+		<image  width="24" height="23" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAXCAMAAAAm/38fAAAAAXNSR0IB2cksfwAAAU1QTFRF////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////0xrd1gAAAG90Uk5TABFxOVjd/k4BD1vM+//rLBt2yPz9yg0zr+HwpUD6+LSzYgQxteaU7S4kq9w9ns8QK3ugffehjehzcPVeB03HYefzNQJMzkVP0RIo5ZWJseSSFxw7BiVKLzLCjwMLPmPguyeTHQy5+dJ0w1yHUH4YlNykIwAAAR1JREFUeJxt0FdbwjAUBuAgtlbth0ArSkEBN+4BzgIqbrQOtA7qwL3//6VpWrRBcpHnnPdrRkNIo+Fr8jfkZkFs+adSa1u7jEBHvQdDYUUFOiN1n3d1y4hqQIz3eLgHvYkkgJRH+/oHqAymhug8PPK3SXpUpDI2PkFnTE7VeHpGoK7M+ucydpCVHE/PL9CbQFv0LS3bLq4w1nN5u4MSkgqrrFpbp1zc2GQN8ltkW3HKnV0a7JVYLe9HSDzjOA6cjYxDFYGjY3LiLoVYdo4+PTML5zq5uHQdQpH77auaI+vRikWuDdUNbjyBeXuX06v3GgsePMHjE9QEIZaZfMYLd8KriDf7bYLvsQ8uqJain+67WVxQMb74S/6O8jff/wBDriYGWc+xGAAAAABJRU5ErkJggg=="/>
+	</defs>
+	<style>
+	</style>
+	<use id="send" href="#img1" x="8" y="9"/>
+</svg>
