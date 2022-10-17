@@ -78,16 +78,16 @@ function registeralumne(){
                     <a href='main.php'><p>Torna enrere ...</p></a>
                 </div>
             </div>
-            <div class='divformmod'>
+            <div id='adminlog'>
                 <h1>Login alumne</h1>
                 <form action='register.php' method='post' enctype='multipart/form-data'>
-                    <div><p>DNI:</p><input type='text' name='DNI' id='DNI'></div>
-                    <div><p>Nom:</p><input type='text' name='nom_alum' id='nom_alum'></div>
-                    <div><p>Cognom:</p><input type='text' name='cog_alum' id='cog_alum'></div>
-                    <div><p>Edat:</p><input type='text' name='edat_alum' id='edat_alum'></input></div>
-                    <div><p>Correu:</p><input type='email' name='correo' id='correo'></input></div>
-                    <div><p>Password:</p><input type='password' name='passwd' id=passwd'></input></div>
-                    <div><p>Foto:</p><input accept=image/jpeg type='file' name='foto' id='foto'></input></div>
+                    <div><p></p><input type='text' name='DNI' id='DNI' placeholder='DNI' class='campoform'></div>
+                    <div><p><br></p><input type='text' name='nom_alum' id='nom_alum' placeholder='Nom' class='campoform'></div>
+                    <div><p><br></p><input type='text' name='cog_alum' id='cog_alum' placeholder='Cognom' class='campoform'></div>
+                    <div><p><br></p><input type='text' name='edat_alum' id='edat_alum' placeholder='Edat' class='campoform'></input></div>
+                    <div><p><br></p><input type='email' name='correo' id='correo' placeholder='Correu' class='campoform'></input></div>
+                    <div><p><br></p><input type='password' name='passwd' id=passwd' placeholder='Contrasenya' class='campoform'></input></div>
+                    <div><p><br></p><input accept=image/jpeg type='file' name='foto' id='foto'></input></div>
                     <div><button type='submit' class='botonform'><img src='img/sendwhitegood.svg' id='fotoenviar'></button></div>
                 </form>
             </div>";
@@ -212,7 +212,7 @@ function elsmeuscursos($consulta){
         echo "<h1 id='titol'>".$curs[1]."</h1>";
         echo "<p id='desc'>Descripció: ".$curs[2]."</p>";
         echo "<p id='hores'>Hores totals: ".$curs[3]."</p>";
-        echo "<p id='data'>Inscripció disponible fins: ".$curs[5]."</p>";
+        echo "<p id='data'>Desmatriculació disponible fins: ".$curs[5]."</p>";
         echo "<p><a id='matricularme' href='baixaalumne.php?id=".$curs[0]."'>Donar de baixa</a></p>";
         echo "</div>";
         echo "</div>";
@@ -360,15 +360,15 @@ function formularioCursos($consulta){
             echo "<a href='cursadmin.php'><p>Ves enrere ...</p></a>";
         echo "</div>";
     echo "</div>";
-    echo "<div class='divformmod'>";
+    echo "<div id='adminlog'>";
         echo "<h1>Afegir curs</h1>";
         echo "<form action='formcursos.php' method='post'>";
-            echo "<p>Nom curs: <input type='text' name='nom_curs' id='nom_curs'></p>";
-            echo "<p>Descripció: <input type='text' name='desc_curs' id='desc_curs'></p>";
-            echo "<p>Hores totals: <input type='number' name='hores_curs' id='hores_curs'></p>";
-            echo "<p>Data d'inici: <input type='date' name='ini_curs' id='ini_curs'></input></p>";
-            echo "<p>Data final: <input type='date' name='fin_curs' id='fin_curs'></input></p>";
-            echo "<p>DNI del professor: <select name='DNI_prof' id='DNI_prof'>";
+            echo "<p><input type='text' name='nom_curs' id='nom_curs' placeholder='Nom curs' class='campoform'></p>";
+            echo "<p><br><input type='text' name='desc_curs' id='desc_curs' placeholder='Descripció del curs' class='campoform'></p>";
+            echo "<p><br><input type='number' name='hores_curs' id='hores_curs' placeholder='Hores totals' class='campoform'></p>";
+            echo "<p><br><input type='date' name='ini_curs' id='ini_curs' class='campoform'></input></p>";
+            echo "<p><br><input type='date' name='fin_curs' id='fin_curs' class='campoform'></input></p>";
+            echo "<p><br><select name='DNI_prof' id='DNI_prof'>";
             for ($i=0;$i<$numlinia;$i++){
                 $dni = mysqli_fetch_assoc($consulta);
                 ?>
@@ -389,15 +389,15 @@ function formulariProfessor(){
     echo "<a href='profeadmin.php'><p>Ves enrere ...</p></a>";
     echo "</div>";
     echo "</div>";
-    echo "<div class='divformmod'>";
+    echo "<div id='adminlog'>";
     echo "<h1>Afegir professor</h1>";
         echo "<form action='formprofe.php' method='post' enctype='multipart/form-data'>";
-            echo "<div><p>DNI:</p><input type='text' name='DNI' id='DNI'></div>";
-            echo "<div><p>Nom:</p><input type='text' name='nom_prof' id='nom_prof'></div>";
-            echo "<div><p>Cognom:</p><input type='text' name='cog_prof' id='cog_prof'></div>";
-            echo "<div><p>Titol:</p><input type='text' name='titol_prof' id='titol_prof'></input></div>";
-            echo "<div><p>Foto:</p><input accept=image/jpeg type='file' name='foto' id='foto'></input></div>";
-            echo "<div><p>Activat</p><input type='radio' id='activat' name='onoff' value='1' required></input>Descativat <input type='radio' id='noactivat' name='onoff' value='0'></input></div>";
+            echo "<div><p></p><input type='text' name='DNI' id='DNI' placeholder='DNI' class='campoform'></div>";
+            echo "<div><p><br></p><input type='text' name='nom_prof' id='nom_prof' placeholder='Nom' class='campoform'></div>";
+            echo "<div><p><br></p><input type='text' name='cog_prof' id='cog_prof' placeholder='Cognom' class='campoform'></div>";
+            echo "<div><p><br></p><input type='text' name='titol_prof' id='titol_prof' placeholder='Titol' class='campoform'></input></div>";
+            echo "<div><p><br>Foto:</p><input accept=image/jpeg type='file' name='foto' id='foto' ></input></div>";
+            echo "<div><p><br>Activat <input type='radio' id='activat' name='onoff' value='1' required></input> Descativat <input type='radio' id='noactivat' name='onoff' value='0'></input></p></div>";
             echo "<div><button type='submit' class='botonform'><img src='img/sendwhitegood.svg' id='fotoenviar'></button></div>";
         echo "</form>";
     echo "</div>";
@@ -414,16 +414,16 @@ function modificarCurs($conexion, $consulta){
             echo "<a href='cursadmin.php'><p>Ves enrere ...</p></a>";
         echo "</div>";
     echo "</div>";
-    echo "<div class='divformmod' >";
+    echo "<div id='adminlog'>";
         echo "<h1>Modificar curs</h1>";
         echo "<form action='modcurs.php' method='post'>";
-            echo "<p>Nom curs: <input type='number' name='id' id='id' value='".$resultat['codi_curs']."' readonly></p>";
-            echo "<p>Nom curs: <input type='text' name='nom_curs' id='nom_curs' value='".$resultat['nom_curs']."'></p>";
-            echo "<p>Descripció: <input type='text' name='desc_curs' id='desc_curs' value='".$resultat['desc_curs']."'></p>";
-            echo "<p>Hores totals: <input type='number' name='hores_curs' id='hores_curs' value='".$resultat['hores_curs']."'></p>";
-            echo "<p>Data d'inici: <input type='date' name='ini_curs' id='ini_curs' value='".$resultat['ini_curs']."'></input></p>";
-            echo "<p>Data final: <input type='date' name='fin_curs' id='fin_curs' value='".$resultat['fin_curs']."'></input></p>";
-            echo "<p>DNI del professor: <select name='DNI_prof' id='DNI_prof' value='".$resultat['DNI_prof']."'>";
+            echo "<p><input type='number' name='id' id='id' value='".$resultat['codi_curs']."' class='campoform' readonly></p>";
+            echo "<p><br><input type='text' name='nom_curs' id='nom_curs' value='".$resultat['nom_curs']."' class='campoform'></p>";
+            echo "<p><br><input type='text' name='desc_curs' id='desc_curs' value='".$resultat['desc_curs']."' class='campoform'></p>";
+            echo "<p><br><input type='number' name='hores_curs' id='hores_curs' value='".$resultat['hores_curs']."' class='campoform'></p>";
+            echo "<p><br><input type='date' name='ini_curs' id='ini_curs' value='".$resultat['ini_curs']."' class='campoform'></input></p>";
+            echo "<p><br><input type='date' name='fin_curs' id='fin_curs' value='".$resultat['fin_curs']."' class='campoform'></input></p>";
+            echo "<p><br><select name='DNI_prof' id='DNI_prof' value='".$resultat['DNI_prof']."'>";
             for ($i=0;$i<$numlinia;$i++){
                 $dninomcomplet = mysqli_fetch_assoc($consultadni);
                 if($resultat['DNI_prof'] == $dninomcomplet['DNI']){
@@ -453,13 +453,13 @@ function modificarProfessor($consulta){
             echo "<a href='profeadmin.php'><p>Ves enrere ...</p></a>";
         echo "</div>";
     echo "</div>";
-    echo "<div class='divformmod'>";
+    echo "<div id='adminlog'>";
         echo "<h1>Modificar professor</h1>";
         echo "<form action='modprofe.php' method='post' enctype='multipart/form-data'>";
-            echo "<p>DNI: <input type='text' name='DNI' id='DNI' value='$profe[DNI]' readonly></p>";
-            echo "<p>Nom: <input type='text' name='nom_prof' id='nom_prof' value='$profe[nom_prof]'></p>";
-            echo "<p>Cognom: <input type='text' name='cog_prof' id='cog_prof' value='$profe[cog_prof]'></p>";
-            echo "<p>Titol: <input type='text' name='titol_prof' id='titol_prof' value='$profe[titol_prof]'></input></p>";
+            echo "<p><input type='text' name='DNI' id='DNI' value='$profe[DNI]' class='campoform' readonly></p>";
+            echo "<p><br><input type='text' name='nom_prof' id='nom_prof' value='$profe[nom_prof]' class='campoform'></p>";
+            echo "<p><br><input type='text' name='cog_prof' id='cog_prof' value='$profe[cog_prof]' class='campoform'></p>";
+            echo "<p><br><input type='text' name='titol_prof' id='titol_prof' value='$profe[titol_prof]' class='campoform'></input></p>";
             echo "<p><button type='submit' class='botonform'><img src='img/sendwhitegood.svg' id='fotoenviar'></button></p>";
         echo "</form>";
     echo "</div>";
@@ -473,13 +473,13 @@ function modificarFoto($consulta){
             echo "<a href='profeadmin.php'><p>Ves enrere ...</p></a>";
         echo "</div>";
     echo "</div>";
-    echo "<div class='divformmod'>";
+    echo "<div id='adminlog'>";
         echo "<h1>Modificar foto</h1>";
         echo "<form action='modfotoprof.php' method='post' enctype='multipart/form-data'>";
-            echo "<p>DNI: <input type='text' name='DNI' id='DNI' value='$foto[DNI]' readonly></p>";
-            echo "<p>Nom: <input type='text' name='nom_prof' id='nom_prof' value='$foto[nom_prof]' readonly></p>";
-            echo "<p>Cognom: <input type='text' name='cog_prof' id='cog_prof' value='$foto[cog_prof]' readonly></p>";
-            echo "<p>Seleciona la foto: <input type='file' accept='img/jpg' name='foto' id='foto'></p>";
+            echo "<p><input type='text' name='DNI' id='DNI' value='$foto[DNI]' class='campoform' readonly></p>";
+            echo "<p><br><input type='text' name='nom_prof' id='nom_prof' value='$foto[nom_prof]' class='campoform' readonly></p>";
+            echo "<p><br><input type='text' name='cog_prof' id='cog_prof' value='$foto[cog_prof]' class='campoform' readonly></p>";
+            echo "<p><br><input type='file' accept='img/jpg' name='foto' id='foto'></p>";
             echo "<p><button type='submit' class='botonform'><img src='img/sendwhitegood.svg' id='fotoenviar'></button></p>";
         echo "</form>";
     echo "</div>";
@@ -490,17 +490,17 @@ function modificarAlumne($consulta){
     echo "<div class='header'>";
     echo "<img src='img/logo.svg' alt='Logo'>";
     echo "<div class='navmenu'>";
-    echo "<a href='fitxaalumne.php'><p>Ves enrere ...</p></a>";
+    echo "<a href='fitxaalum.php'><p>Ves enrere ...</p></a>";
     echo "</div>";
     echo "</div>";
-    echo "<div class='divformmod'>";
+    echo "<div id='adminlog'>";
     echo "<h1>Modificar dades</h1>";
     echo "<form action='modalumne.php' method='post' enctype='multipart/form-data'>";
-    echo "<p>DNI: <input type='text' name='DNI' id='DNI' value='$alumne[DNI]' readonly></p>";
-    echo "<p>Nom: <input type='text' name='nom_alum' id='nom_alum' value='$alumne[nom_alum]'></p>";
-    echo "<p>Cognom: <input type='text' name='cog_alum' id='cog_alum' value='$alumne[cog_alum]'></p>";
-    echo "<p>Edat: <input type='number' name='edat_alum' id='edat_alum' value='$alumne[edat_alum]'></p>";
-    echo "<p>Correu: <input type='email' name='correo_alum' id='correo_alum' value='$alumne[correo_alum]'></p>";
+    echo "<p><input type='text' name='DNI' id='DNI' value='$alumne[DNI]' class='campoform' readonly></p>";
+    echo "<p><br><input type='text' name='nom_alum' id='nom_alum' value='$alumne[nom_alum]' class='campoform'></p>";
+    echo "<p><br><input type='text' name='cog_alum' id='cog_alum' value='$alumne[cog_alum]' class='campoform'></p>";
+    echo "<p><br><input type='number' name='edat_alum' id='edat_alum' value='$alumne[edat_alum]' class='campoform'></p>";
+    echo "<p><br><input type='email' name='correo_alum' id='correo_alum' value='$alumne[correo_alum]' class='campoform'></p>";
     echo "<p><button type='submit' class='botonform'><img src='img/sendwhitegood.svg' id='fotoenviar'></button></p>";
     echo "</form>";
     echo "</div>";
@@ -514,13 +514,13 @@ function modificarFotoAlumne($consulta){
     echo "<a href='fitxaalum.php'><p>Ves enrere ...</p></a>";
     echo "</div>";
     echo "</div>";
-    echo "<div class='divformmod'>";
+    echo "<div id='adminlog'>";
     echo "<h1>Modificar foto</h1>";
     echo "<form action='modfotoalumne.php' method='post' enctype='multipart/form-data'>";
-    echo "<p>DNI: <input type='text' name='DNI' id='DNI' value='$foto[DNI]' readonly></p>";
-    echo "<p>Nom: <input type='text' name='nom_alum' id='nom_alum' value='$foto[nom_alum]' readonly></p>";
-    echo "<p>Cognom: <input type='text' name='cog_alum' id='[cog_alum' value='$foto[cog_alum]' readonly></p>";
-    echo "<p>Seleciona la foto: <input type='file' accept='img/jpg' name='foto' id='foto'></p>";
+    echo "<p><input type='text' name='DNI' id='DNI' value='$foto[DNI]' class='campoform' readonly></p>";
+    echo "<p><br><input type='text' name='nom_alum' id='nom_alum' value='$foto[nom_alum]' class='campoform' readonly></p>";
+    echo "<p><br><input type='text' name='cog_alum' id='[cog_alum' value='$foto[cog_alum]' class='campoform' readonly></p>";
+    echo "<p>Foto: <input type='file' accept='img/jpg' name='foto' id='foto'></p>";
     echo "<p><button type='submit' class='botonform'><img src='img/sendwhitegood.svg' id='fotoenviar'></button></p>";
     echo "</form>";
     echo "</div>";
@@ -611,15 +611,15 @@ function modificarNota($consulta,$DNI,$idcurs,$nota){
     echo "<div class='header'>";
         echo "<img src='img/logo.svg' alt='Logo'>";
         echo "<div class='navmenu'>";
-            echo "<a href='elsmeusalumnes.php'><p>Ves enrere ...</p></a>";
+            echo "<a href='elsmeusalumnes.php?id=$idcurs'><p>Ves enrere ...</p></a>";
         echo "</div>";
     echo "</div>";
-    echo "<div class='divformmod'>";
+    echo "<div id='adminlog'>";
         echo "<h1>Modificar nota</h1>";
         echo "<form action='editnota.php' method='post' enctype='multipart/form-data'>";
-            echo "<p>DNI: <input type='text' name='DNI' id='DNI' value='$DNI' readonly></p>";
-            echo "<p>Id curs: <input type='text' name='idcurs' id='idcurs' value='$idcurs' readonly></p>";
-            echo "<p>Nota: <input type='number' name='nota' id='nota' value='$nota'></p>";
+            echo "<p><input type='text' name='DNI' id='DNI' value='$DNI' class='campoform' readonly></p>";
+            echo "<p><br><input type='text' name='idcurs' id='idcurs' value='$idcurs' class='campoform' readonly></p>";
+            echo "<p><br><input type='number' name='nota' id='nota' value='$nota' class='campoform'></p>";
             echo "<p><button type='submit' class='botonform'><img src='img/sendwhitegood.svg' id='fotoenviar'></button></p>";
         echo "</form>";
     echo "</div>";
