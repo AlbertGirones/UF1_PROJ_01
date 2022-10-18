@@ -1,0 +1,17 @@
+
+USUARI ADMINISTRADOR:
+
+User: admin
+Password: admin
+
+USUARI PROFESSOR:
+
+Nom: Oriol Tarradellas
+User: 672996313Y
+Password: 123
+
+USUARI ALUMNE:
+
+Nom: Julian Alvarez Moñon
+User: 451283644Ñ
+Password: alum123

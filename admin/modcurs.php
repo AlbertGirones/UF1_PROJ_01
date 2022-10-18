@@ -12,7 +12,7 @@ openHtml('Modificar curs');
             $dataini = $_POST['ini_curs'];
             $datafin = $_POST['fin_curs'];
             $DNI = $_POST['DNI_prof'];
-            $sql = "UPDATE cursos SET nom_curs = '$nom', desc_curs = '$desc', hores_curs = '$hores', ini_curs='$dataini', fin_curs='$datafin', DNI_prof='$DNI' WHERE codi_curs='$id'";
+            $sql = "UPDATE cursos SET nom_curs = '$nom', desc_curs = '$desc', hores_curs = $hores, ini_curs='$dataini', fin_curs='$datafin', DNI_prof='$DNI' WHERE codi_curs='$id'";
             $consulta = mysqli_query($conexion,$sql);
             if(!$consulta){
                 comprobarConsulta($conexion,$sql,'modcurs.php');
